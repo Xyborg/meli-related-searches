@@ -50,7 +50,7 @@ if submitted:
     try:
         df['related_searches'] = df['related_searches'].str.split(',')
     except Exception:
-        st.info("Error: No Related Searches Were Found, Try a Broader Keyword!")
+        st.info("Error: No encontre terminos relacionados. Intenta con una keyword mas generica.")
         st.stop()
 
     df = df.explode('related_searches').reset_index(drop=True)
@@ -127,7 +127,7 @@ if submitted:
                         }
                     ],
                 }
-            st.header(f"MeLi Related Searches for: {query}")
+            st.header(f"MeLi: Palabras Relacionadas {query}")
             st.caption("Right mouse click to save as image.")
             st_echarts(opts, key=query, height=1700)
 
