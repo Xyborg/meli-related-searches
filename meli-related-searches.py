@@ -13,7 +13,7 @@ import pandas as pd
 st.title("Mercado Libre: Extractor de Busquedas Relacionadas")
 st.subheader("Obtene ideas de palabras claves utilizando las sugerencias de MeLi")
 st.write(
-    "Desarrollador por [Martin Aberastegue](https://twitter.com/xyborg), inspirado en la herramienta de [@LeeFootSEO](https://twitter.com/LeeFootSEO) para [extraer datos de eBay](https://twitter.com/LeeFootSEO/status/1546122340240588801)")
+    "Desarrollado por [Martin Aberastegue](https://twitter.com/xyborg), inspirado en la herramienta de [@LeeFootSEO](https://twitter.com/LeeFootSEO) para [extraer datos de eBay](https://twitter.com/LeeFootSEO/status/1546122340240588801)")
 st.write("Si te gusto, [regalame un cafecito](https://cafecito.app/xyborg) :)")
 st.write("")
 
