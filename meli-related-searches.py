@@ -59,7 +59,7 @@ if submitted:
 
 
     def visualize_autocomplete(df_autocomplete_full):
-        df_autocomplete_full['Keyword'] = seed_keyword
+        df_autocomplete_full['Keyword'] = seedkwd
 
         for query in df_autocomplete_full['Keyword'].unique():
             df_autocomplete_full = df_autocomplete_full[df_autocomplete_full['Keyword'] == query]
