@@ -7,6 +7,7 @@ st.set_page_config(
 from streamlit_echarts import st_echarts
 import requests
 import json
+from stqdm import stqdm
 from user_agent2 import (generate_user_agent)
 import pandas as pd
 
@@ -19,10 +20,10 @@ st.write("")
 
 with st.form(key='columns_in_form_2'):
     seedkwd = st.text_input('Keyword Semilla')
-    submitted = st.form_submit_button('Enviar')
     mercado = st.selectbox(
         'Elige el mercado/pais. Argentina (MLA), Mexico (MLM), Brasil (MLB), Uruguay (MLU), Chile (MLC), Colombia (MCO), Peru (MPE)',
         ('MLA', 'MLM', 'MLB', 'MLU', 'MLC', 'MCO', 'MPE'))
+    submitted = st.form_submit_button('Enviar')
 
 if submitted:
     def getkwds(seed_keyword, market):
@@ -37,7 +38,7 @@ if submitted:
 
     for i in getkwds(seedkwd, mercado).json()['suggested_queries']:
         print("> ",i['q'])
-        for o in getkwds(i['q'], mercado).json()['suggested_queries']:
+        for o in stqdm(getkwds(i['q'], mercado).json()['suggested_queries']):
           print(" - ", o['q'])
           source_kws.append(i['q'])
           final_kws.append(o['q'])
