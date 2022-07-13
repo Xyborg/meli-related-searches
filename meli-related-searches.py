@@ -40,10 +40,10 @@ if submitted:
         print("> ",i['q'])
         for o in getkwds(i['q'], mercado).json()['suggested_queries']:
           print(" - ", o['q'])
-          for p in getkwds(o['q'], mercado).json()['suggested_queries']:
-            print("    - ", p['q'])
-            source_kws.append(o['q'])
-            final_kws.append(p['q'])
+          source_kws.append(i['q'])
+          final_kws.append(o['q'])
+          #for p in getkwds(o['q'], mercado).json()['suggested_queries']:
+          #  print("    - ", p['q'])
 
     df = pd.DataFrame(None)
     df['seed_keyword'] = source_kws
