@@ -55,6 +55,7 @@ if submitted:
         st.stop()
 
     df = df.explode('related_searches').reset_index(drop=True)
+    df = df.drop_duplicates()
 
 
     def visualize_autocomplete(df_autocomplete_full):
