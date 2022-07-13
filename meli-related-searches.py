@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config(
-    page_title="Mercado Libre Related Search Scraper by Martin Aberastegue",
+    page_title="Mercado Libre: Extractor de Busquedas Relacionadas por Martin Aberastegue",
     page_icon="chart_with_upwards_trend",
     layout="wide",
 )
@@ -10,12 +10,11 @@ import json
 from user_agent2 import (generate_user_agent)
 import pandas as pd
 
-st.title("Mercado Libre Related Search Scraper")
-st.subheader("Get Related Searches from Mercado Libre")
+st.title("Mercado Libre: Extractor de Busquedas Relacionadas por Martin Aberastegue")
+st.subheader("Obtene ideas de palabras claves utilizando las sugerencias de MeLi")
 st.write(
-    "An app which visualises related searches from Mercado Libre")
-st.write(
-    "Little tool based on the eBay script by [@LeeFootSEO](https://twitter.com/LeeFootSEO)")
+    "Inspirado en la herramienta de [@LeeFootSEO](https://twitter.com/LeeFootSEO) para [extraer datos de eBay](https://twitter.com/LeeFootSEO/status/1546122340240588801)")
+st.write("Si te gusto, [regalame un cafecito](https://cafecito.app/xyborg) :)")
 st.write("")
 
 with st.form(key='columns_in_form_2'):
@@ -139,7 +138,7 @@ if submitted:
     csv = convert_df(df)
 
     st.download_button(
-        label="📥 Download your report!",
+        label="📥 Descargar palabras claves!",
         data=csv,
         file_name='meli_related_searches.csv',
         mime='text/csv', )
