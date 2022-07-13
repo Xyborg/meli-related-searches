@@ -127,7 +127,7 @@ if submitted:
                         }
                     ],
                 }
-            st.header(f"MeLi: Palabras Relacionadas {query}")
+            st.header(f"Palabras Relacionadas para: {query}")
             st.caption("Right mouse click to save as image.")
             st_echarts(opts, key=query, height=1700)
 
